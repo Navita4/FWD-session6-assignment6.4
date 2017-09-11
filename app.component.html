@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-wrap">
+                <h1>Two way Binding</h1>
+  <!-- bind these values from variables title , firstname and lastname with two-way binding -->
+
+  <form role="form" autocomplete="off">
+    <div class="form-group">
+      <label for="FirstName">FirstName</label><br />
+      <input type="text"  [(ngModel)]="FirstName" class="form-control" id="FirstName" placeholder="FirstName"><br />
+    </div>
+    <div class="form-group">
+        <label for="LastName">LastName</label><br />
+        <input type="text"  [(ngModel)]="LastName" class="form-control" id="LastName" placeholder="LastName"><br />
+      </div><br />
+      <input type="Submit" id="btn-login" class="btn btn-custom button-lg btn-block" value="Create Title"(click)="CreateTitle(first.value,last.value)">
+  </form>
+  <hr/>
+  <div class="form-group">
+      {{title}}
+        </div>
+        <!-- imported child component-->
+        <div class="form-group" *ngIf="Submitted">
+            <child-app[title]="title"></child-app>
+    </div>
+</div>
+<!--/.col-xs-12-->
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+  
